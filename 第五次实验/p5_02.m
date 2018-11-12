@@ -1,0 +1,10 @@
+Img=imread('Fig0507.tif');
+SaltAndPepper=imnoise(Img,'salt & pepper',0.2);
+trans=1/9*ones(3,3);
+MedianFilter=medfilt2(SaltAndPepper);
+subplot(1,3,1),imshow(Img);
+title('原始图像');
+subplot(1,3,2),imshow(SaltAndPepper);
+title('加噪图像');
+subplot(1,3,3),imshow(MedianFilter);
+title('中值滤波后');
